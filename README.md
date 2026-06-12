@@ -19,13 +19,23 @@ yt-dlp requires YouTube cookies to access age-restricted or members-only content
 ### Firefox
 Coming soon.
 
-## Usage
+## Usage (recommended: incognito, so cookies don't keep expiring)
 
-1. Open YouTube and sign in to your account
-2. Navigate to any YouTube video
-3. Click the extension icon
-4. Click "Export Cookies.txt"
-5. Save the `youtube_cookies.txt` file
+YouTube rotates the cookies of any session that stays open in a browser, which is
+why exported cookies often stop working within hours. The fix is to export from a
+throwaway session that you close immediately and never touch again:
+
+1. Go to `chrome://extensions`, open this extension's details and enable **Allow in Incognito**
+2. Open an incognito window and sign in with a **spare YouTube account** (not your main one)
+3. Navigate to `https://www.youtube.com/robots.txt`
+4. Click the extension icon and click "Export Cookies.txt" — when an incognito window is open, the extension exports its cookies automatically
+5. Save `youtube_cookies.txt`, then **close the incognito window**
+6. Never log in with that account in a browser again — yt-dlp can keep using the cookies for months
+
+### Quick export (normal profile)
+
+You can also just sign in to YouTube normally and click "Export Cookies.txt", but
+expect the cookies to be rotated quickly while you keep using YouTube in that browser.
 
 ## Using with yt-dlp
 
@@ -39,7 +49,7 @@ yt-dlp --cookies /path/to/youtube_cookies.txt "https://www.youtube.com/watch?v=V
 
 - Cookies are session tokens - **don't share them publicly**
 - Delete the cookies file after use
-- Cookies typically expire within days to weeks
+- Cookies exported from an active browser session are rotated quickly; cookies exported from a closed incognito session of a spare account last much longer
 
 ## Format
 

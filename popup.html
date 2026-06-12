@@ -45,6 +45,28 @@
       text-align: center;
       min-height: 20px;
     }
+    .hint {
+      font-size: 11px;
+      color: #6ab7ff;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+    .tip {
+      background: #1a2a1a;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      color: #9ccc9c;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+    .tip ol {
+      margin: 6px 0 0;
+      padding-left: 18px;
+    }
+    .tip li {
+      margin-bottom: 3px;
+    }
     .warning {
       background: #2a2a2a;
       padding: 10px;
@@ -60,6 +82,17 @@
   <p class="info">Export your YouTube session cookies for use with yt-dlp on a server.</p>
   <button id="exportBtn">Export Cookies.txt</button>
   <div id="status" class="status"></div>
+  <div id="hint" class="hint"></div>
+  <div class="tip">
+    <b>Cookies expiring fast?</b> YouTube rotates cookies of sessions that stay open in the browser.
+    <ol>
+      <li>Enable "Allow in Incognito" for this extension</li>
+      <li>Open an incognito window and log in with a spare account</li>
+      <li>Go to <code>youtube.com/robots.txt</code></li>
+      <li>Click Export here</li>
+      <li>Close the incognito window and never log in with that account in a browser again</li>
+    </ol>
+  </div>
   <div class="warning">
     Warning: Cookies are like session tokens. Don't share them publicly. Delete after use.
   </div>
